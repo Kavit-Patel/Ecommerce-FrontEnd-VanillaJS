@@ -2,6 +2,9 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
+  server: {
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3030,
+  },
   build: {
     rollupOptions: {
       input: {
