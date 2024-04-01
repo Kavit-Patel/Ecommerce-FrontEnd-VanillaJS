@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <main class="w-full bg-[#DFDFDF] flex justify-center">
+      <div class="w-[375px] md:w-[800px] lg:w-[1000px] bg-[#f5f5f5]">
+        <!-- Navbar Section starts -->
+        <div id="navbar-placeholder"></div>
+        <!-- Navbar Section ends -->
+
+        <section class="w-full">
+          <div class="path px-8 flex gap-3 py-4"></div>
+          <div
+            class="w-[375px] mx-auto border-2 lg:w-full lg:h-[656px] flex justify-center items-center"
+          >
+            <div class="w-[95%] h-full flex flex-col lg:flex-row gap-8">
+              <div class="lg:w-[536px] h-full p-4">
+                <h2 class="text-xl font-semibold mb-8 text-center lg:text-left">
+                  Shopping Cart
+                </h2>
+                <div class="h-[560px] flex flex-col gap-4">
+                  <div
+                    id="cartContainer"
+                    class="overflow-y-auto h-[80%] flex flex-col gap-3"
+                  ></div>
+                  <template id="cartTemplate">
+                    <div
+                      id="card"
+                      class="w-full flex flex-col shadow-md lg:flex-row gap-3 lg:gap-6 justify-center items-center p-2"
+                    >
+                      <img class="w-14" src="" alt="" />
+                      <div
+                        class="flex flex-col items-center lg:items-start gap-1"
+                      >
+                        <span class="title w-full text-xs"></span>
+                        <span class="id text-xs"></span>
+                      </div>
+                      <div class="flex gap-3">
+                        <button
+                          class="decreaseQuantity text-xl transition-all hover:font-bold hover:scale-125 active:scale-100"
+                        >
+                          -
+                        </button>
+                        <div class="quantity border-2 py-1 px-3 text-sm">1</div>
+                        <button
+                          class="increaseQuantity text-xl transition-all hover:font-bold hover:scale-125 active:scale-100"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <div class="price w-full text-center"></div>
+                      <div
+                        class="remove text-red-600 cursor-pointer rotate-45 text-xl transition-all hover:font-bold hover:scale-125 active:scale-100"
+                      >
+                        +
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+              <div class="w-full lg:w-[536px] h-full p-4">
+                <h2 class="text-lg font-semibold my-5 text-center lg:text-left">
+                  Order Summary
+                </h2>
+                <div class="lg:w-[80%] flex flex-col gap-6">
+                  <div class="flex flex-col gap-1">
+                    <label class="text-xs" for="promocode"
+                      >Discount code / Promo code</label
+                    >
+                    <div class="w-full h-10 relative">
+                      <input
+                        name="promocode"
+                        id="promocode"
+                        class="w-full h-full border-2 outline-none"
+                        type="text"
+                      />
+                      <button
+                        class="absolute right-5 top-2 text-xs border border-black px-3 py-1 rounded-md"
+                      >
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <label class="text-xs" for="cardnumber"
+                      >Your bonus card number</label
+                    >
+                    <div class="w-full h-10 relative">
+                      <input
+                        name="cardnumber"
+                        id="cardnumber"
+                        class="w-full h-full border-2 outline-none"
+                        type="text"
+                      />
+                      <button
+                        class="absolute right-5 top-2 text-xs border border-black px-3 py-1 rounded-md"
+                      >
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex justify-between font-semibold">
+                    <span>Subtotal</span><span class="subtotal"></span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-700">Estimated Tax</span>
+                    <span class="tax font-semibold"></span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-700"
+                      >Estimated shipping & Handling</span
+                    >
+                    <span class="shipping font-semibold"></span>
+                  </div>
+                  <div class="flex justify-between font-semibold">
+                    <span>Total</span>
+                    <span class="total"></span>
+                  </div>
+                  <div
+                    class="w-[80%] h-10 rounded-sm self-center checkOut bg-black text-white flex justify-center items-center transition-all hover:scale-105 active:scale-100"
+                  >
+                    CheckOut
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer Section starts -->
+        <div id="footer-placeholder"></div>
+        <!-- Footer Section ends -->
+      </div>
+    </main>
+    <script type="module" src="cart.ts"></script>
+  </body>
+</html>

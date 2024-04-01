@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Product</title>
+  </head>
+  <body>
+    <main class="w-full bg-[#DFDFDF] flex justify-center">
+      <div class="w-[375px] md:w-[800px] lg:w-[1000px] bg-[#f5f5f5]">
+        <!-- Navbar Section starts -->
+        <div id="navbar-placeholder"></div>
+        <!-- Navbar Section ends -->
+
+        <!-- Product Display starts -->
+
+        <section>
+          <div class="px-8 path flex gap-3 py-3 text-gray-500"></div>
+          <div
+            class="w-full h-[896px] py-8 md:py-0 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-8"
+          >
+            <div class="h-[672px] flex-1 flex justify-center items-center">
+              <img class="md:w-2/3" src="" alt="" />
+            </div>
+            <div
+              class="productDetail h-full flex-1 flex flex-col justify-center ml-8 md:ml-1 gap-3 md:gap-6"
+            >
+              <div
+                class="title text-xl md:text-2xl lg:text-3xl font-semibold"
+              ></div>
+              <div class="flex gap-5 text-2xl font-semibold">
+                <span class="price"></span
+                ><span class="subPrice line-through text-gray-400"></span>
+              </div>
+              <div class="color flex gap-5 items-center">
+                <span>Select color :</span>
+                <span class="flex gap-3">
+                  <span class="selectColor w-full flex gap-1"> </span>
+                </span>
+              </div>
+              <div class="memory flex gap-1.5 md:gap-3"></div>
+              <div class="specification w-full flex flex-wrap gap-2"></div>
+              <div class="text-xs pr-14">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                porro quisquam dolor quasi, omnis adipisci aut excepturi
+                consequuntur repudiandae modi doloribus, aperiam aspernatur eum
+                facilis, numquam vel consequatur neque nobis quis! Doloremque,
+                earum vero?...
+              </div>
+              <div
+                class="w-[85%] flex flex-col md:flex-row justify-around gap-2"
+              >
+                <a
+                  class="lg:w-1/2 px-3 h-10 bg-gray-100 border border-black rounded-sm flex justify-center items-center transition-all hover:scale-105 active:scale-100"
+                  href="#"
+                  >Add to Wishlist</a
+                >
+                <a
+                  class="addToCart lg:w-1/2 px-3 h-10 bg-black rounded-sm text-white flex justify-center items-center transition-all hover:scale-105 active:scale-100"
+                  href="/src/pages/cart.html"
+                  >Add to Cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Product Display ends -->
+
+        <!-- Footer Section starts -->
+        <div id="footer-placeholder"></div>
+        <!-- Footer Section ends -->
+      </div>
+    </main>
+    <script type="module" src="product.ts"></script>
+  </body>
+</html>
