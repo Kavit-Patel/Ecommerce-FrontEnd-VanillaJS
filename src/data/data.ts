@@ -2,9 +2,12 @@ import { dataType, productType } from "../types/types";
 
 export const fetchData = async () => {
   try {
-    const request = await fetch(import.meta.env.VITE_API_URL, {
-      credentials: "include",
-    });
+    const request = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/getAllProducts`,
+      {
+        credentials: "include",
+      }
+    );
     const prods = await request.json();
     if (prods.success) {
       return prods.response.reduce(
