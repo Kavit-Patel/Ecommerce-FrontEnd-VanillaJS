@@ -3,7 +3,7 @@ import { resolve } from "path";
 
 export default defineConfig({
   server: {
-    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3030,
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 5173,
   },
   build: {
     rollupOptions: {

@@ -1,5 +1,13 @@
 # Ecommerce-FrontEnd-VanillaJS-TYPESCRIPT
-# Simple E-Commerce Website with TypeScript, React JS, Next JS, and MongoDB
+
+## Simple E-Commerce Website with TypeScript, Vanilla, and MongoDB Cloud for product fetching.
+
+## Deployment
+
+- FRONT_END of this website is already deployed and can be accessed here:
+  [Live Demo]("https://ecommerce-front-end-vanilla-js.vercel.app")
+- BACK_END website is deployed and can be accessed here:
+  [Live Demo]("https://ecom-backend-9pyi.onrender.com")
 
 This project is a basic e-commerce website that demonstrates the use of TypeScript, VanillaJS,TailwindCss. It includes features like product listing, Product Filtering, cart functionality .
 
@@ -8,10 +16,9 @@ This project is a basic e-commerce website that demonstrates the use of TypeScri
 - **Frontend**:
   - Vanilla JS
   - TypeScript
-  - Tailwind CSS 
+  - Tailwind CSS
 - **Backend**:
   - MongoDB Cloud (for storing product data)
-
 
 ## Features
 
@@ -23,14 +30,9 @@ This project is a basic e-commerce website that demonstrates the use of TypeScri
    - Users can search for products by name.
    - Filter products by price.
 
-
-## Deployment
-
-The website is already deployed and can be accessed here: [Live Demo]()
-
 ## Getting Started
 
 1. Clone this repository.
-2. Install dependencies: `npm install`
-3. Run the project: `npm run dev`
-
+2. cd/Ecommerce-FrontEnd-VanillaJS
+3. Install dependencies: `npm install`
+4. Run the project: `npm run dev`
