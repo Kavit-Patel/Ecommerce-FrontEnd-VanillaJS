@@ -5,15 +5,20 @@ import { addToCart } from "../utilityFunctions/cartOperation";
 import { fullCartProducts } from "../utilityFunctions/localStorageAccess";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const products: dataType = await fetchData();
   // let products:productType = data ;
+
   fetch("/src/components/navbar.html")
     .then((response) => response.text())
     .then((navData) => {
       let navbarPlaceholder = document.querySelector("#navbar-placeholder");
       if (navbarPlaceholder) navbarPlaceholder.innerHTML = navData;
-      let cartItems = document.querySelector(".navCart") as HTMLSpanElement;
       let myCart = document.querySelector(".myCart") as HTMLSpanElement;
+      fetchData().then((data: dataType) => {
+        let cartItems = document.querySelector(".navCart") as HTMLSpanElement;
+        const productsArr = Object.values(data).flat();
+        if (cartItems)
+          cartItems.innerText = fullCartProducts(productsArr).length;
+      });
       let hamburger = document.querySelector(
         ".hamburger"
       ) as HTMLParagraphElement;
@@ -21,7 +26,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         ".showCart"
       ) as HTMLParagraphElement;
 
-      if (cartItems) cartItems.innerText = fullCartProducts(products).length;
       document
         .querySelector("input")
         ?.addEventListener(
@@ -45,12 +49,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     })
     .catch((error) => console.error("Error loading the navbar:", error));
-
   fetch("../components/footer.html")
     .then((response) => response.text())
     .then((data) => {
       document.querySelector("#footer-placeholder")!.innerHTML = data;
     });
+  const products: dataType = await fetchData();
   let url = window.location.href;
   let urlParams = new URLSearchParams(new URL(url).search);
   let type = urlParams.get("type") as string;
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     span.innerText = ">";
     path.append(a, span);
   });
-  let image = document.querySelector("img") as HTMLImageElement;
+  let image = document.querySelector("#mainImg") as HTMLImageElement;
   // let productDetail = document.querySelector(".productDetail") as HTMLElement;
   image.src = item.image;
   (document.querySelector(".title") as HTMLElement).innerText = item.name;

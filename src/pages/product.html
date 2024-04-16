@@ -12,7 +12,13 @@
     <main class="w-full bg-[#DFDFDF] flex justify-center">
       <div class="w-[375px] md:w-[800px] lg:w-[1000px] bg-[#f5f5f5]">
         <!-- Navbar Section starts -->
-        <div id="navbar-placeholder"></div>
+        <div id="navbar-placeholder">
+          <div class="loader w-full flex justify-center items-center">
+            <div
+              class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900 self-center"
+            ></div>
+          </div>
+        </div>
         <!-- Navbar Section ends -->
 
         <!-- Product Display starts -->
@@ -23,7 +29,7 @@
             class="w-full h-[896px] py-8 md:py-0 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-8"
           >
             <div class="h-[672px] flex-1 flex justify-center items-center">
-              <img class="md:w-2/3" src="" alt="" />
+              <img id="mainImg" class="md:w-2/3" src="" alt="" />
             </div>
             <div
               class="productDetail h-full flex-1 flex flex-col justify-center ml-8 md:ml-1 gap-3 md:gap-6"

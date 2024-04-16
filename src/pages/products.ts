@@ -1,17 +1,10 @@
 import { fetchData } from "../data/data";
-import { productType } from "../types/types";
+import { dataType, productType } from "../types/types";
 // import data from "../data/data.json";
 import { pathArr } from "../utilityFunctions/getPath";
 import { fullCartProducts } from "../utilityFunctions/localStorageAccess";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const data = await fetchData();
-  let products: productType[] = data.products;
-  let sortedProductPriceArr: number[] = products
-    .map((e: productType) => e.price)
-    .sort((a: number, b: number) => b - a);
-  let minProductPrice = sortedProductPriceArr.at(-1);
-  let maxProductPrice = sortedProductPriceArr[0];
   let navSearch: HTMLInputElement;
   fetch("../components/navbar.html")
     .then((response) => response.text())
@@ -19,11 +12,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       let navbarPlaceholder = document.querySelector("#navbar-placeholder");
 
       if (navbarPlaceholder) navbarPlaceholder.innerHTML = navData;
-      let cartItems = document.querySelector(".navCart") as HTMLSpanElement;
+      // let cartItems = document.querySelector(".navCart") as HTMLSpanElement;
 
-      if (cartItems) cartItems.innerText = fullCartProducts(data).length;
+      // if (cartItems) cartItems.innerText = fullCartProducts(data).length;
 
       let myCart = document.querySelector(".myCart") as HTMLSpanElement;
+      fetchData().then((data: dataType) => {
+        let cartItems = document.querySelector(".navCart") as HTMLSpanElement;
+        const productsArr = Object.values(data).flat();
+        if (cartItems)
+          cartItems.innerText = fullCartProducts(productsArr).length;
+      });
       let hamburger = document.querySelector(
         ".hamburger"
       ) as HTMLParagraphElement;
@@ -103,6 +102,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (path) path.append(a, span);
   });
+  const data = await fetchData();
+  let products: productType[] = data.products;
+  let sortedProductPriceArr: number[] = products
+    .map((e: productType) => e.price)
+    .sort((a: number, b: number) => b - a);
+  let minProductPrice = sortedProductPriceArr.at(-1);
+  let maxProductPrice = sortedProductPriceArr[0];
   let range = document.querySelector("#priceRange") as HTMLInputElement;
   let minRange = document.querySelector(".minimum") as HTMLElement;
   let maxRange = document.querySelector(".maximum") as HTMLElement;

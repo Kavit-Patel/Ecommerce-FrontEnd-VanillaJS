@@ -12,7 +12,13 @@
       <div class="w-[375px] md:w-[800px] lg:w-[1000px] bg-[#f5f5f5]">
         <!-- Navbar start -->
 
-        <nav id="navbar-placeholder" class="flex justify-center"></nav>
+        <nav id="navbar-placeholder" class="w-full flex justify-center">
+          <div class="loader w-screen flex justify-center items-center">
+            <div
+              class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"
+            ></div>
+          </div>
+        </nav>
 
         <!-- Navbar ends -->
 
@@ -129,7 +135,13 @@
           <div
             id="categorySection"
             class="w-full md:h-[128px] flex flex-col md:flex-row gap-3 justify-center items-center"
-          ></div>
+          >
+            <div class="loader w-full flex justify-center items-center">
+              <div
+                class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900 self-center"
+              ></div>
+            </div>
+          </div>
         </div>
         <template id="categoryTemplate"
           ><div class="categoryCard">
@@ -152,7 +164,13 @@
           <div
             id="featuredSection"
             class="flex justify-center md:justify-between flex-wrap gap-2"
-          ></div>
+          >
+            <div class="loader w-full flex justify-center items-center">
+              <div
+                class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900 self-center"
+              ></div>
+            </div>
+          </div>
         </div>
         <template id="featuredTemplate">
           <div
@@ -198,7 +216,13 @@
 
         <!-- Footer Section starts -->
 
-        <div class="footer"></div>
+        <div class="footer">
+          <div class="loader w-screen flex justify-center items-center">
+            <div
+              class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"
+            ></div>
+          </div>
+        </div>
 
         <!-- Footer Section ends -->
       </div>

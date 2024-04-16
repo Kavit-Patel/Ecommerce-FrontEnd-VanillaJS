@@ -1,4 +1,4 @@
-import { dataType, Cart } from "../types/types";
+import { Cart, productType } from "../types/types";
 
 export interface cartProducts {
   _id: string;
@@ -38,14 +38,14 @@ export const lsRemove = (id: string) => {
   return currentCart;
 };
 
-export function fullCartProducts(data: dataType) {
+export function fullCartProducts(data: productType[]) {
   return lsItems().map((item: cartProducts) => {
-    let match = data.products.find((el) => el._id == item._id);
+    let match = Object.values(data).find((el) => el._id == item._id);
     return { ...match, quantity: item.quantity };
   });
 }
 
-export function calculateSubTotal(data: dataType) {
+export function calculateSubTotal(data: productType[]) {
   let calculatedSubTotal: number =
     fullCartProducts(data).reduce((acc: number, el: Cart) => {
       if (el.price && el.quantity) {

@@ -34,5 +34,6 @@ This project is a basic e-commerce website that demonstrates the use of TypeScri
 
 1. Clone this repository.
 2. cd/Ecommerce-FrontEnd-VanillaJS
-3. Install dependencies: `npm install`
-4. Run the project: `npm run dev`
+3. Create .env file in Root and add VITE_API_URL = https://ecom-backend-9pyi.onrender.com
+4. Install dependencies: `npm install`
+5. Run the project: `npm run dev`
