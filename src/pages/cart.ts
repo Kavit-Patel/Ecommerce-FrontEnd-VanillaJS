@@ -178,7 +178,7 @@ if (checOutId) {
       checOutId.querySelector("span")!.innerText = "";
       bounceLoader.style.display = "flex";
     }
-    window.location.href = `http://localhost:5173/login?queryCart=${cartData}`;
-    // window.location.href = `https://ecommerce-react-tau-ten.vercel.app/login?queryCart=${cartData}`;
+    // window.location.href = `http://localhost:5173/login?queryCart=${cartData}`;
+    window.location.href = `https://ecommerce-react-tau-ten.vercel.app/login?queryCart=${cartData}`;
   });
 }

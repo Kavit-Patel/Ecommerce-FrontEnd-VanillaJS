@@ -1,6 +1,4 @@
-# Ecommerce-FrontEnd-VanillaJS-TYPESCRIPT
-
-## Simple E-Commerce Website with TypeScript, Vanilla, and MongoDB Cloud for product fetching.
+# Ecommerce-FrontEnd-VanillaJS-TYPESCRIPT with MongoDB Cloud for product fetching.
 
 ## Deployment
 
@@ -9,7 +7,9 @@
 - BACK_END website is deployed and can be accessed here:
   [Live Demo]("https://ecom-backend-9pyi.onrender.com")
 
-This project is a basic e-commerce website that demonstrates the use of TypeScript, VanillaJS,TailwindCss. It includes features like product listing, Product Filtering, cart functionality .
+**In This VanillaJs frontend("https://ecommerce-front-end-vanilla-js.vercel.app"), as soon as user clicks on cart's CheckOut button , it will redirect user with user's cart items , to react frontend's (https://ecommerce-react-tau-ten.vercel.app/login) login page, User should login or create account there and his cart items will show in cart as it is.Further Payment can be done after that.**
+
+This project is a basic e-commerce website that demonstrates the use of TypeScript, VanillaJS,TailwindCss. It includes features like product listing, Product Filtering, cart functionality(CRUD) in local storage .
 
 ## Tech Stack
 
